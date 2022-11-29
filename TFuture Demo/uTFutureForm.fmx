@@ -1,0 +1,69 @@
+object Form3: TForm3
+  Left = 0
+  Top = 0
+  Caption = 'TFuture Demo'
+  ClientHeight = 309
+  ClientWidth = 232
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object lblFormStatus: TLabel
+    Position.Y = 261.000000000000000000
+    Text = 'lblFormStatus'
+    TabOrder = 3
+  end
+  object ProgressBar: TProgressBar
+    Align = Bottom
+    Orientation = Horizontal
+    Position.Y = 289.000000000000000000
+    Size.Width = 232.000000000000000000
+    Size.Height = 20.000000000000000000
+    Size.PlatformDefault = False
+    object FloatAnimation: TFloatAnimation
+      AutoReverse = True
+      Duration = 3.000000000000000000
+      Loop = True
+      PropertyName = 'Value'
+      StartValue = 0.000000000000000000
+      StopValue = 100.000000000000000000
+    end
+  end
+  object lblDescription: TLabel
+    AutoSize = True
+    StyledSettings = [Family, FontColor]
+    Position.X = 32.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.HorzAlign = Center
+    Text = 'Result...'
+    TabOrder = 0
+  end
+  object btnWithFuture: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'With TFuture'
+    OnClick = btnWithFutureClick
+  end
+  object btnRefresh: TButton
+    Enabled = False
+    Position.X = 64.000000000000000000
+    Position.Y = 184.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'Refresh'
+    OnClick = btnRefreshClick
+  end
+end

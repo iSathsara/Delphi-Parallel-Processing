@@ -6,6 +6,9 @@
         <Projects Include="TTask Demo\TTaskDemo.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="TFuture Demo\TFutureDemo.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -23,14 +26,23 @@
     <Target Name="TTaskDemo:Make">
         <MSBuild Projects="TTask Demo\TTaskDemo.dproj" Targets="Make"/>
     </Target>
+    <Target Name="TFutureDemo">
+        <MSBuild Projects="TFuture Demo\TFutureDemo.dproj"/>
+    </Target>
+    <Target Name="TFutureDemo:Clean">
+        <MSBuild Projects="TFuture Demo\TFutureDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TFutureDemo:Make">
+        <MSBuild Projects="TFuture Demo\TFutureDemo.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="TTaskDemo"/>
+        <CallTarget Targets="TTaskDemo;TFutureDemo"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TTaskDemo:Clean"/>
+        <CallTarget Targets="TTaskDemo:Clean;TFutureDemo:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TTaskDemo:Make"/>
+        <CallTarget Targets="TTaskDemo:Make;TFutureDemo:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

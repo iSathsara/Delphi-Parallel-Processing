@@ -72,11 +72,10 @@ procedure TForm1.btnWithoutTTaskClick(Sender: TObject);
 var
   Value : Integer;
 begin
-  // "Assume" this is a time consuming process
-  // ex: network related task, database operation...
-
   lblFormStatus.Text:= 'Form will Freeze!';
 
+  // "Assume" this is a time consuming process. (network related task, database operation...)
+  //  Sleep() prentends that kind of time delay.
   Sleep(4000);
   Value:= Random(100);
   lblDescription.Text:= Value.ToString;
