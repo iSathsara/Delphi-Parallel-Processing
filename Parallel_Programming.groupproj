@@ -9,6 +9,9 @@
         <Projects Include="TFuture Demo\TFutureDemo.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Parallel_For Demo\ParallelForDemo.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +38,23 @@
     <Target Name="TFutureDemo:Make">
         <MSBuild Projects="TFuture Demo\TFutureDemo.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ParallelForDemo">
+        <MSBuild Projects="Parallel_For Demo\ParallelForDemo.dproj"/>
+    </Target>
+    <Target Name="ParallelForDemo:Clean">
+        <MSBuild Projects="Parallel_For Demo\ParallelForDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ParallelForDemo:Make">
+        <MSBuild Projects="Parallel_For Demo\ParallelForDemo.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="TTaskDemo;TFutureDemo"/>
+        <CallTarget Targets="TTaskDemo;TFutureDemo;ParallelForDemo"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TTaskDemo:Clean;TFutureDemo:Clean"/>
+        <CallTarget Targets="TTaskDemo:Clean;TFutureDemo:Clean;ParallelForDemo:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TTaskDemo:Make;TFutureDemo:Make"/>
+        <CallTarget Targets="TTaskDemo:Make;TFutureDemo:Make;ParallelForDemo:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
