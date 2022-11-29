@@ -1,0 +1,766 @@
+object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'Parallel-For Demo2'
+  ClientHeight = 471
+  ClientWidth = 357
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object btnNormalForLoop: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Normal For Loop'
+  end
+  object btnParallelForLoop: TButton
+    Position.X = 176.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Parallel For Loop'
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    TextSettings.HorzAlign = Center
+    Position.X = 272.000000000000000000
+    Position.Y = 18.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label1: TLabel
+    Position.X = 176.000000000000000000
+    Position.Y = 23.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Trailing
+    Text = 'Stride : '
+    TabOrder = 3
+  end
+  object GridLayout: TGridLayout
+    ItemHeight = 30.000000000000000000
+    ItemWidth = 40.000000000000000000
+    Padding.Left = 8.000000000000000000
+    Padding.Top = 10.000000000000000000
+    Orientation = Horizontal
+    Position.X = 8.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 337.000000000000000000
+    Size.Height = 353.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object Panel1: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 87
+    end
+    object Panel2: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 86
+    end
+    object Panel3: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 85
+    end
+    object Panel4: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 84
+    end
+    object Panel5: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 83
+    end
+    object Panel6: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 82
+    end
+    object Panel7: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 81
+    end
+    object Panel8: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 80
+    end
+    object Panel9: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 79
+    end
+    object Panel10: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 78
+    end
+    object Panel11: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 77
+    end
+    object Panel12: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 76
+    end
+    object Panel13: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 75
+    end
+    object Panel14: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 74
+    end
+    object Panel15: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 73
+    end
+    object Panel16: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 72
+    end
+    object Panel17: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 71
+    end
+    object Panel18: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 70
+    end
+    object Panel19: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 69
+    end
+    object Panel20: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 68
+    end
+    object Panel21: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 67
+    end
+    object Panel22: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 66
+    end
+    object Panel23: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 65
+    end
+    object Panel24: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 64
+    end
+    object Panel25: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 63
+    end
+    object Panel26: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 62
+    end
+    object Panel27: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 61
+    end
+    object Panel28: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 60
+    end
+    object Panel29: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 59
+    end
+    object Panel30: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 58
+    end
+    object Panel31: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 57
+    end
+    object Panel32: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 56
+    end
+    object Panel33: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 130.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 55
+    end
+    object Panel34: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 130.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 54
+    end
+    object Panel35: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 130.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 53
+    end
+    object Panel36: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 130.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 52
+    end
+    object Panel37: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 130.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 51
+    end
+    object Panel38: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 130.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 50
+    end
+    object Panel39: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 130.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 49
+    end
+    object Panel40: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 130.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 48
+    end
+    object Panel41: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 47
+    end
+    object Panel42: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 46
+    end
+    object Panel43: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 45
+    end
+    object Panel44: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 44
+    end
+    object Panel45: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 43
+    end
+    object Panel46: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 42
+    end
+    object Panel47: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 41
+    end
+    object Panel48: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 160.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 40
+    end
+    object Panel49: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 190.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 39
+    end
+    object Panel50: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 190.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 38
+    end
+    object Panel51: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 190.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 37
+    end
+    object Panel52: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 190.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 36
+    end
+    object Panel53: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 190.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 35
+    end
+    object Panel54: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 190.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 34
+    end
+    object Panel55: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 190.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 33
+    end
+    object Panel56: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 190.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 32
+    end
+    object Panel57: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 220.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 31
+    end
+    object Panel58: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 220.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+    end
+    object Panel59: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 220.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+    end
+    object Panel60: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 220.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+    end
+    object Panel61: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 220.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+    end
+    object Panel62: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 220.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+    end
+    object Panel63: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 220.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+    object Panel64: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 220.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
+    object Panel65: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 250.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 30
+    end
+    object Panel66: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 250.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 29
+    end
+    object Panel67: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 250.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 28
+    end
+    object Panel68: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 250.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 27
+    end
+    object Panel69: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 250.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 26
+    end
+    object Panel70: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 250.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 25
+    end
+    object Panel71: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 250.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 24
+    end
+    object Panel72: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 250.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 23
+    end
+    object Panel73: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 280.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 22
+    end
+    object Panel74: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 280.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 21
+    end
+    object Panel75: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 280.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 20
+    end
+    object Panel76: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 280.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 19
+    end
+    object Panel77: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 280.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 18
+    end
+    object Panel78: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 280.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 17
+    end
+    object Panel79: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 280.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 16
+    end
+    object Panel80: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 280.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 15
+    end
+    object Panel81: TPanel
+      Position.X = 8.000000000000000000
+      Position.Y = 310.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 14
+    end
+    object Panel82: TPanel
+      Position.X = 48.000000000000000000
+      Position.Y = 310.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 13
+    end
+    object Panel83: TPanel
+      Position.X = 88.000000000000000000
+      Position.Y = 310.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 12
+    end
+    object Panel84: TPanel
+      Position.X = 128.000000000000000000
+      Position.Y = 310.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 11
+    end
+    object Panel85: TPanel
+      Position.X = 168.000000000000000000
+      Position.Y = 310.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+    end
+    object Panel86: TPanel
+      Position.X = 208.000000000000000000
+      Position.Y = 310.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+    end
+    object Panel87: TPanel
+      Position.X = 248.000000000000000000
+      Position.Y = 310.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+    end
+    object Panel88: TPanel
+      Position.X = 288.000000000000000000
+      Position.Y = 310.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+    end
+  end
+end
