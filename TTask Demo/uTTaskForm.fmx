@@ -1,0 +1,87 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'TTask Demo'
+  ClientHeight = 306
+  ClientWidth = 228
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object lblDescription: TLabel
+    AutoSize = True
+    StyledSettings = [Family, FontColor]
+    Position.X = 32.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.HorzAlign = Center
+    Text = 'Result...'
+    TabOrder = 0
+  end
+  object btnWithoutTTask: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Without TTask'
+    OnClick = btnWithoutTTaskClick
+  end
+  object btnWithTTask: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'With TTask / No Sync'
+    OnClick = btnWithTTaskClick
+  end
+  object ProgressBar: TProgressBar
+    Align = Bottom
+    Orientation = Horizontal
+    Position.Y = 286.000000000000000000
+    Size.Width = 228.000000000000000000
+    Size.Height = 20.000000000000000000
+    Size.PlatformDefault = False
+    object FloatAnimation: TFloatAnimation
+      AutoReverse = True
+      Duration = 3.000000000000000000
+      Loop = True
+      PropertyName = 'Value'
+      StartValue = 0.000000000000000000
+      StopValue = 100.000000000000000000
+    end
+  end
+  object lblFormStatus: TLabel
+    Position.Y = 261.000000000000000000
+    Text = 'lblFormStatus'
+    TabOrder = 4
+  end
+  object Label1: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Click to see results...'
+    TabOrder = 5
+  end
+  object btnTTaskSync: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 231.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'With TTask / Sync'
+    OnClick = btnTTaskSyncClick
+  end
+end

@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{88D79F48-619B-4477-9A4A-235F844DC701}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TTask Demo\TTaskDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TTaskDemo">
+        <MSBuild Projects="TTask Demo\TTaskDemo.dproj"/>
+    </Target>
+    <Target Name="TTaskDemo:Clean">
+        <MSBuild Projects="TTask Demo\TTaskDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TTaskDemo:Make">
+        <MSBuild Projects="TTask Demo\TTaskDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TTaskDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TTaskDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TTaskDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
