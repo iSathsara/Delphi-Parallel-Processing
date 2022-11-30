@@ -1,0 +1,68 @@
+object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'Parallel for '
+  ClientHeight = 228
+  ClientWidth = 210
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object lblResult: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 40.000000000000000000
+    Position.Y = 32.000000000000000000
+    TextSettings.Font.Size = 18.000000000000000000
+    TextSettings.HorzAlign = Center
+    Text = 'lblResult'
+    TabOrder = 0
+  end
+  object btnThreadSafe: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 134.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Parallel For - Thread Safe'
+    OnClick = btnThreadSafeClick
+  end
+  object ProgressBar: TProgressBar
+    Align = Bottom
+    Orientation = Horizontal
+    Position.Y = 208.000000000000000000
+    Size.Width = 210.000000000000000000
+    Size.Height = 20.000000000000000000
+    Size.PlatformDefault = False
+    object FloatAnimation: TFloatAnimation
+      AutoReverse = True
+      Duration = 3.000000000000000000
+      Loop = True
+      PropertyName = 'Value'
+      StartValue = 0.000000000000000000
+      StopValue = 100.000000000000000000
+    end
+  end
+  object lblFormStatus: TLabel
+    Position.Y = 183.000000000000000000
+    Text = 'Form is Alive...'
+    TabOrder = 1
+  end
+  object btnNoThreadSafe: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Parallel For - No Thread Safe'
+    OnClick = btnNoThreadSafeClick
+  end
+  object Timer: TTimer
+    Enabled = False
+    OnTimer = TimerTimer
+    Left = 168
+    Top = 16
+  end
+end

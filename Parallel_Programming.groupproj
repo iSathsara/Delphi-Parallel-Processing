@@ -12,6 +12,12 @@
         <Projects Include="Parallel_For Demo\ParallelForDemo.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Parallel_for Interlocked\ParallelForInterlocked.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Monitor Demo\Monitoring.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -47,14 +53,32 @@
     <Target Name="ParallelForDemo:Make">
         <MSBuild Projects="Parallel_For Demo\ParallelForDemo.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ParallelForInterlocked">
+        <MSBuild Projects="Parallel_for Interlocked\ParallelForInterlocked.dproj"/>
+    </Target>
+    <Target Name="ParallelForInterlocked:Clean">
+        <MSBuild Projects="Parallel_for Interlocked\ParallelForInterlocked.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ParallelForInterlocked:Make">
+        <MSBuild Projects="Parallel_for Interlocked\ParallelForInterlocked.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Monitoring">
+        <MSBuild Projects="Monitor Demo\Monitoring.dproj"/>
+    </Target>
+    <Target Name="Monitoring:Clean">
+        <MSBuild Projects="Monitor Demo\Monitoring.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Monitoring:Make">
+        <MSBuild Projects="Monitor Demo\Monitoring.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="TTaskDemo;TFutureDemo;ParallelForDemo"/>
+        <CallTarget Targets="TTaskDemo;TFutureDemo;ParallelForDemo;ParallelForInterlocked;Monitoring"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TTaskDemo:Clean;TFutureDemo:Clean;ParallelForDemo:Clean"/>
+        <CallTarget Targets="TTaskDemo:Clean;TFutureDemo:Clean;ParallelForDemo:Clean;ParallelForInterlocked:Clean;Monitoring:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TTaskDemo:Make;TFutureDemo:Make;ParallelForDemo:Make"/>
+        <CallTarget Targets="TTaskDemo:Make;TFutureDemo:Make;ParallelForDemo:Make;ParallelForInterlocked:Make;Monitoring:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
