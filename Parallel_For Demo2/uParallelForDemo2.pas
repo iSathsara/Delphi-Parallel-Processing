@@ -16,9 +16,11 @@ type
     GridLayout: TGridLayout;
     lblItemCount: TLabel;
     procedure FormCreate(Sender: TObject);
+    procedure btnNormalForLoopClick(Sender: TObject);
   private
     { Private declarations }
-    FItemCount: Integer;
+    FItemCount : Integer;
+    FItemList  : array of TFmxObject;
 
     function CreateShape: TRectangle;
   public
@@ -29,11 +31,29 @@ var
   Form5 : TForm5;
   Layout: TGridLayout;
 
+const
+  _ITEMCOUNT_ = 88;
+
 implementation
+
+uses
+  System.Threading;
 
 {$R *.fmx}
 
+procedure TForm5.btnNormalForLoopClick(Sender: TObject);
+var
+  I : Integer;
+  ARectangle: TRectangle;
+begin
 
+  // paint shape by shape
+  for I := 0 to Length(FItemList)-1 do Begin
+                 // typecast
+    ARectangle:= TRectangle(FItemList[I]);
+    ARectangle.Fill.Color:= TAlphaColors.Blueviolet;
+  End;
+end;
 
 function TForm5.CreateShape: TRectangle;
 var MyRectangle: TRectangle;
@@ -41,23 +61,26 @@ begin
                                  // "on" which component do you want to create the dynamic object
   MyRectangle:= TRectangle.Create(Layout);
   MyRectangle.Visible:=True;
-
   Result:= MyRectangle;
 end;
 
 procedure TForm5.FormCreate(Sender: TObject);
 Var
   AObject: TFmxObject;
-  I : Integer;
-
+  I,J: Integer;
 begin
-  for I := 0 to 87 do Begin
+  SetLength(FItemList, _ITEMCOUNT_);
+
+  for I := 0 to (_ITEMCOUNT_ - 1) do Begin
     AObject:= Self.CreateShape;
     AObject.Name:='Shape'+I.ToString;
     GridLayout.AddObject(AObject);
+    FItemList[I]:=AObject;
   End;
-  FItemCount:= GridLayout.ChildrenCount;
+
+  FItemCount:= Length(FItemList);
   lblItemCount.Text:= 'Rectangles : '+FItemCount.ToString;
+
 end;
 
 end.

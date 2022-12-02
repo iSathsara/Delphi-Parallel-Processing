@@ -17,6 +17,7 @@ object Form5: TForm5
     Size.PlatformDefault = False
     TabOrder = 0
     Text = 'Normal For Loop'
+    OnClick = btnNormalForLoopClick
   end
   object btnParallelForLoop: TButton
     Position.X = 192.000000000000000000
