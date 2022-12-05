@@ -27,6 +27,7 @@ type
 
     procedure Clear;
     procedure NormalPaint(var index: Integer);
+    procedure ParallelPaint(var index: Integer);
   public
     { Public declarations }
   end;
@@ -67,7 +68,7 @@ begin
     ARectangle:= TRectangle(FItemList[index]);
     ARectangle.Fill.Color:= TAlphaColors.Blueviolet;
   End else
-    raise Exception.Create('Requested item is null');
+    raise Exception.Create('Requested shape is null');
 End;
 
 procedure TForm5.btnNormalForLoopClick(Sender: TObject);
@@ -87,15 +88,36 @@ begin
             End);
 end;
 
+procedure TForm5.ParallelPaint(var index: Integer);
+Var
+  I: Integer;
+  ARectangle: TRectangle;
+begin
+  if FItemList[index] <> nil then Begin
+    ARectangle:= TRectangle(FItemList[index]);
+    // color should be changed according to Thread
+    ARectangle.Fill.Color:= TAlphaColors.Crimson;
+  End else
+    raise Exception.Create('Requested shape is null');
+end;
+
 procedure TForm5.btnParallelForLoopClick(Sender: TObject);
 var ARectangle: TRectangle;
-    I: Integer;
-
+    I, FLow, FHigh: Integer;
+    ThreadNo: Integer;
 begin
   Clear;
+  ThreadNo:= edtStride.Text.ToInteger;
+  FLow:= Low(FItemList);
+  FHigh:= High(FItemList);
+
   TTask.Run(procedure
             Begin
-
+              TParallel.For(ThreadNo, Flow, FHigh, procedure(index: Integer)
+                                                   Begin
+                                                     ParallelPaint(index);
+                                                     Sleep(400);
+                                                   End);
             End);
 
 end;

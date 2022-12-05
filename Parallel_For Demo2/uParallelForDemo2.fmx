@@ -47,7 +47,7 @@ object Form5: TForm5
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     TextSettings.HorzAlign = Trailing
-    Text = 'Stride : '
+    Text = '# of Threads : '
     TabOrder = 3
   end
   object GridLayout: TGridLayout
