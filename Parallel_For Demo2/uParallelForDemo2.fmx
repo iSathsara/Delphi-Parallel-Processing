@@ -1,0 +1,75 @@
+object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'Parallel-For Demo2'
+  ClientHeight = 478
+  ClientWidth = 380
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object btnNormalForLoop: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Normal For Loop'
+    OnClick = btnNormalForLoopClick
+  end
+  object btnParallelForLoop: TButton
+    Position.X = 192.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Parallel For Loop'
+    OnClick = btnParallelForLoopClick
+  end
+  object edtStride: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    Text = '1'
+    TextSettings.HorzAlign = Center
+    Position.X = 288.000000000000000000
+    Position.Y = 18.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label1: TLabel
+    Position.X = 192.000000000000000000
+    Position.Y = 23.000000000000000000
+    Size.Width = 88.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Trailing
+    Text = '# of Threads : '
+    TabOrder = 3
+  end
+  object GridLayout: TGridLayout
+    ItemHeight = 30.000000000000000000
+    ItemWidth = 40.000000000000000000
+    Padding.Left = 8.000000000000000000
+    Padding.Top = 10.000000000000000000
+    Orientation = Horizontal
+    Position.X = 16.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 361.000000000000000000
+    Size.Height = 361.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+  end
+  object lblItemCount: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 23.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'lblItemCount'
+    TabOrder = 5
+  end
+end

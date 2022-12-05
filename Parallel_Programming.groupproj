@@ -18,6 +18,9 @@
         <Projects Include="Monitor Demo\Monitoring.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Parallel_For Demo2\ParallelForDemo2.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -71,14 +74,23 @@
     <Target Name="Monitoring:Make">
         <MSBuild Projects="Monitor Demo\Monitoring.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ParallelForDemo2">
+        <MSBuild Projects="Parallel_For Demo2\ParallelForDemo2.dproj"/>
+    </Target>
+    <Target Name="ParallelForDemo2:Clean">
+        <MSBuild Projects="Parallel_For Demo2\ParallelForDemo2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ParallelForDemo2:Make">
+        <MSBuild Projects="Parallel_For Demo2\ParallelForDemo2.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="TTaskDemo;TFutureDemo;ParallelForDemo;ParallelForInterlocked;Monitoring"/>
+        <CallTarget Targets="TTaskDemo;TFutureDemo;ParallelForDemo;ParallelForInterlocked;Monitoring;ParallelForDemo2"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TTaskDemo:Clean;TFutureDemo:Clean;ParallelForDemo:Clean;ParallelForInterlocked:Clean;Monitoring:Clean"/>
+        <CallTarget Targets="TTaskDemo:Clean;TFutureDemo:Clean;ParallelForDemo:Clean;ParallelForInterlocked:Clean;Monitoring:Clean;ParallelForDemo2:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TTaskDemo:Make;TFutureDemo:Make;ParallelForDemo:Make;ParallelForInterlocked:Make;Monitoring:Make"/>
+        <CallTarget Targets="TTaskDemo:Make;TFutureDemo:Make;ParallelForDemo:Make;ParallelForInterlocked:Make;Monitoring:Make;ParallelForDemo2:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
